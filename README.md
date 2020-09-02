@@ -42,7 +42,7 @@ provide an alternative to overcome this dilemma.
 Concretely, we provide developers with:
 
 - App dev tools: An SDK to integrate federated learning into apps
-  written in Dart or other languages for mobile development of choice,
+  written in Dart or other languages of choice for mobile development,
   as well as frameworks like Flutter.
 - Privacy via cross-device federated learning: Train your AI models
   locally on edge devices such as mobile phones, browsers, or even in
