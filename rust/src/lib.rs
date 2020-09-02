@@ -81,7 +81,7 @@
 //! - it has a strong and static type discipline and traits, which
 //!   describe shareable functionality of a type.
 //! - it is a modern systems programming language, with some functional
-//!   style features such as pattern matching, closures and iterators,
+//!   style features such as pattern matching, closures and iterators.
 //! - its idiomatic code compares favourably to idiomatic C in performance.
 //! - it compiles to WASM and can therefore be applied natively in browser
 //!   settings.
