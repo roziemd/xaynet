@@ -32,7 +32,7 @@ provide a solution to the AI privacy dilemma and bridge the
 often-existing gap between privacy and convenience. Imagine, for
 example, a voice assistant to learn new words directly on device level
 and sharing this knowledge with all other instances, without recording
-and collecting your voice input centrally. Or, think about search
+and collecting your voice input centrally. Or, think about a search
 engine that learns to personalise search results without collecting
 your often sensitive search queries centrally… There are thousands of
 such use cases that today still trade privacy for
