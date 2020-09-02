@@ -35,7 +35,7 @@ and sharing this knowledge with all other instances, without recording
 and collecting your voice input centrally. Or, think about search
 engine that learns to personalise search results without collecting
 your often sensitive search queries centrally… There are thousands of
-such use cases that right today still trade privacy for
+such use cases that today still trade privacy for
 convenience. We think this shouldn’t be the case and we want to
 provide an alternative to overcome this dilemma.
 
