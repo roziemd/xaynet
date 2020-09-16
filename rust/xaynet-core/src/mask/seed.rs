@@ -13,10 +13,8 @@ use sodiumoxide::crypto::box_;
 
 use crate::{
     crypto::{encrypt::SEALBYTES, prng::generate_integer, ByteObject},
-    mask::{config::MaskConfig, object::MaskObject},
-    PetError,
-    SumParticipantEphemeralPublicKey,
-    SumParticipantEphemeralSecretKey,
+    mask::{config::MaskConfig, object::MaskMany},
+    PetError, SumParticipantEphemeralPublicKey, SumParticipantEphemeralSecretKey,
 };
 
 #[derive(AsRef, AsMut, Clone, Debug, PartialEq, Eq)]
@@ -55,15 +53,15 @@ impl MaskSeed {
 
     // TODO separate config for scalar mask - future refactoring
     /// Derives a mask of given length from this seed wrt the masking configuration.
-    pub fn derive_mask(&self, len: usize, config: MaskConfig) -> (MaskObject, MaskObject) {
+    pub fn derive_mask(&self, len: usize, config: MaskConfig) -> (MaskMany, MaskMany) {
         let mut prng = ChaCha20Rng::from_seed(self.as_array());
         let rand_ints = iter::repeat_with(|| generate_integer(&mut prng, &config.order()))
             .take(len)
             .collect();
-        let model_mask = MaskObject::new(config, rand_ints);
+        let model_mask = MaskMany::new(config, rand_ints);
 
         let rand_int = generate_integer(&mut prng, &config.order());
-        let scalar_mask = MaskObject::new(config, vec![rand_int]);
+        let scalar_mask = MaskMany::new(config, vec![rand_int]);
 
         (model_mask, scalar_mask)
     }

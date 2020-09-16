@@ -1,8 +1,6 @@
 use xaynet_core::{
-    mask::{Aggregation, MaskObject},
-    PetError,
-    SumDict,
-    SumParticipantPublicKey,
+    mask::{Aggregation, MaskMany},
+    PetError, SumDict, SumParticipantPublicKey,
 };
 
 use crate::state_machine::{
@@ -179,8 +177,8 @@ impl PhaseState<Sum2> {
     fn add_mask(
         &mut self,
         pk: &SumParticipantPublicKey,
-        model_mask: MaskObject,
-        scalar_mask: MaskObject,
+        model_mask: MaskMany,
+        scalar_mask: MaskMany,
     ) -> Result<(), PetError> {
         // We remove the participant key here to make sure a participant
         // cannot submit a mask multiple times

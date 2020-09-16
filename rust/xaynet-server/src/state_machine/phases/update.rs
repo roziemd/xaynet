@@ -1,12 +1,8 @@
 use std::sync::Arc;
 
 use xaynet_core::{
-    mask::{Aggregation, MaskObject},
-    LocalSeedDict,
-    PetError,
-    SeedDict,
-    SumDict,
-    UpdateParticipantPublicKey,
+    mask::{Aggregation, MaskMany},
+    LocalSeedDict, PetError, SeedDict, SumDict, UpdateParticipantPublicKey,
 };
 
 use crate::state_machine::{
@@ -180,8 +176,8 @@ impl PhaseState<Update> {
         &mut self,
         pk: &UpdateParticipantPublicKey,
         local_seed_dict: &LocalSeedDict,
-        masked_model: MaskObject,
-        masked_scalar: MaskObject,
+        masked_model: MaskMany,
+        masked_scalar: MaskMany,
     ) -> Result<(), PetError> {
         // Check if aggregation can be performed. It is important to
         // do that _before_ updating the seed dictionary, because we
@@ -282,9 +278,8 @@ mod test {
     use xaynet_core::{
         common::RoundSeed,
         crypto::{ByteObject, EncryptKeyPair},
-        mask::{FromPrimitives, MaskObject, Model},
-        SumDict,
-        UpdateSeedDict,
+        mask::{FromPrimitives, MaskMany, Model},
+        SumDict, UpdateSeedDict,
     };
 
     #[tokio::test]
@@ -361,7 +356,7 @@ mod test {
         // We have only one updater, so the aggregation should contain
         // the masked model from that updater
         assert_eq!(
-            <Aggregation as Into<MaskObject>>::into(sum2_state.aggregation().clone().into()),
+            <Aggregation as Into<MaskMany>>::into(sum2_state.aggregation().clone().into()),
             masked_model
         );
         assert!(sum2_state.mask_dict().is_empty());
