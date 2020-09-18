@@ -220,7 +220,6 @@ impl FromBytes for MaskOne {
         let mut mask_many = MaskMany::from_bytes(buffer)?;
         let vec_len = mask_many.data.len();
         if vec_len == 1 {
-            // TEMP .remove rather than index, to avoid cloning
             Ok(MaskOne::new(mask_many.config, mask_many.data.remove(0)))
         } else {
             Err(anyhow!(
@@ -230,8 +229,6 @@ impl FromBytes for MaskOne {
         }
     }
 }
-
-// TODO consider From/ToBytes for MaskObject
 
 #[cfg(test)]
 pub(crate) mod tests {

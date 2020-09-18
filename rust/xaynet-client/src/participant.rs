@@ -166,8 +166,7 @@ impl Participant {
             coordinator_pk,
             payload: Sum2 {
                 sum_signature: self.sum_signature,
-                model_mask: mask.vector,
-                scalar_mask: mask.scalar.into(),
+                model_mask: mask,
             }
             .into(),
         })

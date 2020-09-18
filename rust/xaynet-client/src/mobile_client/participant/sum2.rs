@@ -50,8 +50,7 @@ impl Participant<Sum2> {
             coordinator_pk,
             payload: Sum2Message {
                 sum_signature: self.inner.sum_signature,
-                model_mask: mask.vector,
-                scalar_mask: mask.scalar.into(),
+                model_mask: mask,
             }
             .into(),
         })
