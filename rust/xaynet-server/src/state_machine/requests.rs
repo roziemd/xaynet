@@ -15,7 +15,10 @@ use tracing::Span;
 use xaynet_core::{
     mask::MaskObject,
     message::{Message, Payload, Update},
-    LocalSeedDict, ParticipantPublicKey, SumParticipantEphemeralPublicKey, SumParticipantPublicKey,
+    LocalSeedDict,
+    ParticipantPublicKey,
+    SumParticipantEphemeralPublicKey,
+    SumParticipantPublicKey,
     UpdateParticipantPublicKey,
 };
 

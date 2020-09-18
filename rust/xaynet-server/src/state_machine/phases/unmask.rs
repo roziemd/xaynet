@@ -6,7 +6,8 @@ use crate::state_machine::{
     coordinator::MaskDict,
     events::ModelUpdate,
     phases::{Idle, Phase, PhaseName, PhaseState, Shared, StateError},
-    RoundFailed, StateMachine,
+    RoundFailed,
+    StateMachine,
 };
 
 #[cfg(feature = "metrics")]

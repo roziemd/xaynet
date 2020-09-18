@@ -10,7 +10,7 @@ use anyhow::{anyhow, Context};
 
 use crate::{
     crypto::ByteObject,
-    mask::object::{serialization::MaskObjectBuffer, MaskMany, MaskObject, MaskOne}, // TODO remove MaskMany
+    mask::object::{serialization::MaskObjectBuffer, MaskMany, MaskObject, MaskOne},
     message::{
         traits::{FromBytes, LengthValueBuffer, ToBytes},
         utils::range,

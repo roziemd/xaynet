@@ -2,8 +2,13 @@ use super::{Participant, ParticipantState};
 use xaynet_core::{
     mask::{Aggregation, MaskObject, MaskSeed},
     message::{Message, Sum2 as Sum2Message},
-    CoordinatorPublicKey, ParticipantPublicKey, ParticipantTaskSignature, PetError,
-    SumParticipantEphemeralPublicKey, SumParticipantEphemeralSecretKey, UpdateSeedDict,
+    CoordinatorPublicKey,
+    ParticipantPublicKey,
+    ParticipantTaskSignature,
+    PetError,
+    SumParticipantEphemeralPublicKey,
+    SumParticipantEphemeralSecretKey,
+    UpdateSeedDict,
 };
 #[derive(Serialize, Deserialize, Clone)]
 pub struct Sum2 {

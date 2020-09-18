@@ -12,8 +12,7 @@ use num::bigint::BigUint;
 use crate::{
     mask::{
         config::{serialization::MASK_CONFIG_BUFFER_LEN, MaskConfig},
-        object::MaskMany,
-        object::MaskOne,
+        object::{MaskMany, MaskOne},
     },
     message::{
         traits::{FromBytes, ToBytes},

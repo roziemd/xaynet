@@ -2,7 +2,11 @@ use std::sync::Arc;
 
 use xaynet_core::{
     mask::{Aggregation, MaskObject},
-    LocalSeedDict, PetError, SeedDict, SumDict, UpdateParticipantPublicKey,
+    LocalSeedDict,
+    PetError,
+    SeedDict,
+    SumDict,
+    UpdateParticipantPublicKey,
 };
 
 use crate::state_machine::{
@@ -261,7 +265,8 @@ mod test {
         common::RoundSeed,
         crypto::{ByteObject, EncryptKeyPair},
         mask::{FromPrimitives, MaskMany, Model},
-        SumDict, UpdateSeedDict,
+        SumDict,
+        UpdateSeedDict,
     };
 
     #[tokio::test]
